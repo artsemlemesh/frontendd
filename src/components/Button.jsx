@@ -1,7 +1,7 @@
-import { Button } from "@nextui-org/react";
-import { useState } from "react";
+import { Button } from '@nextui-org/react';
+import { useEffect, useState } from 'react';
 
- function MyButton({title, number, subtitle}) {
+function MyButton({ title, number, subtitle }) {
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
@@ -30,25 +30,51 @@ import { useState } from "react";
         }}
       >
         <p className="text-lg z-10">{title}</p>
-      <p className="text-5xl font-bold z-10">{number}</p>
-      <p className="text-lg z-10">{subtitle}</p>
+        <p className="text-5xl font-bold z-10">{number}</p>
+        <p className="text-lg z-10">{subtitle}</p>
 
         {/* Hover opacity effect for corners */}
         <div className="absolute inset-0 w-full h-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300 ease-in-out pointer-events-none"></div>
       </Button>
-
-     
     </div>
   );
 }
 
-const Buttons = () => (
-  <div className="grid grid-cols-2 gap-6 mt-20">
-    <MyButton title="мы" number="1" subtitle="на рынке" />
-    <MyButton title="гарантируем" number="50%" subtitle="безопасность" />
-    <MyButton title="путешествие" number="597" subtitle="дней" />
-    <MyButton title="календарик" number="2001 г." subtitle="в подарок" />
-  </div>
-);
+const Buttons = () => {
+  const [buttons, setButtons] = useState([]);
 
-export default Buttons
+  useEffect(() => {
+    const fetchButtons = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:8000/api/buttons/');
+        const data = await response.json();
+
+        // Check if data is an array, and only set `buttons` if true
+        if (Array.isArray(data)) {
+          setButtons(data);
+        } else {
+          console.error('Expected an array but received:', data);
+        }
+      } catch (error) {
+        console.error('Failed to fetch buttons:', error);
+      }
+    };
+
+    fetchButtons();
+  }, []);
+
+  return (
+    <div className="grid grid-cols-2 gap-6 mt-20">
+      {buttons.map((button, index) => (
+        <MyButton
+          key={index}
+          title={button.title}
+          number={button.number}
+          subtitle={button.subtitle}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default Buttons;
