@@ -19,10 +19,12 @@ function App() {
           <div className="relative flex flex-col items-center lg:flex-row lg:items-start">
             {/* Mars Image */}
             <img
-              src="/planet.png"
+              src="/planet1.png"
               alt="Mars"
               className="h-96 w-96 object-cover z-20 mb-4 lg:mb-0 lg:absolute lg:top-40 lg:left-96 lg:-translate-x-1/2 lg:-translate-y-1/2" // Centering image absolutely with no offset
             />
+            
+            
 
             {/* Left Side Words */}
             <div className=" lg:relative z-10 left-[-4rem] top-1/4 lg:left-auto lg:top-0 lg:-translate-x-1/2 lg:-translate-y-1/4">
