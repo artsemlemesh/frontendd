@@ -34,7 +34,6 @@ function MyButton({ title, number, subtitle, gradientStyle }) {
         <p className="text-5xl font-bold z-10">{number}</p>
         <p className="text-lg z-10">{subtitle}</p>
 
-        {/* Background Overlay */}
         <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"></div>
       </Button>
     </div>
@@ -62,7 +61,6 @@ const Buttons = () => {
     fetchButtons();
   }, []);
 
-  // Define inline gradient styles for each button corner
   const gradientStyles = [
     { background: 'linear-gradient(to top left, rgba(128,128,128,0.3), rgba(128,128,128,0.1) 30%, transparent 80%)' }, 
     { background: 'linear-gradient(to top right, rgba(128,128,128,0.3), rgba(128,128,128,0.1) 30%, transparent 80%)' }, 
@@ -78,7 +76,7 @@ const Buttons = () => {
           title={button.title}
           number={button.number}
           subtitle={button.subtitle}
-          gradientStyle={gradientStyles[index % gradientStyles.length]} // Apply gradient style per button
+          gradientStyle={gradientStyles[index % gradientStyles.length]} 
         />
       ))}
     </div>
