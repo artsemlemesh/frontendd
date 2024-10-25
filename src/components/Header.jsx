@@ -29,25 +29,25 @@ function Header() {
         </nav>
 
         {/* Mobile navigation links */}
-        <nav className="lg:hidden flex flex-col items-center text-gray-300 space-y-4">
-          {[
-            'Главная',
-            'Технология',
-            'График полетов',
-            'Гарантии',
-            'О компании',
-            'Контакты',
-          ].map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="group hover:text-gray-400 relative transition-colors block text-center"
-            >
-              {item}
-              <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-gray-400 scale-x-0 transition-transform duration-200 group-hover:scale-x-100"></span>
-            </a>
-          ))}
-        </nav>
+<nav className="lg:hidden grid grid-cols-2 gap-y-4 text-gray-300">
+  {[
+    'Главная',
+    'Технология',
+    'График полетов',
+    'Гарантии',
+    'О компании',
+    'Контакты',
+  ].map((item) => (
+    <a
+      key={item}
+      href="#"
+      className="group hover:text-gray-400 relative transition-colors block text-center"
+    >
+      {item}
+      <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-gray-400 scale-x-0 transition-transform duration-200 group-hover:scale-x-100"></span>
+    </a>
+  ))}
+</nav>
       </div>
 
       <div className="border-b border-gray-600 mt-4"></div>
