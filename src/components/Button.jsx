@@ -1,7 +1,7 @@
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
 
-export default function MyButton({title, number, subtitle}) {
+ function MyButton({title, number, subtitle}) {
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
@@ -22,7 +22,7 @@ export default function MyButton({title, number, subtitle}) {
     <div className="flex gap-4 items-center">
       <Button
         size="lg"
-        className="relative group overflow-hidden text-white font-semibold transition-transform duration-300 ease-in-out transform bg-transparent  w-40 h-40 outline-none focus:outline-none"
+        className="relative group overflow-hidden text-gray-300 font-semibold transition-transform duration-300 ease-in-out transform bg-transparent  w-40 h-40 outline-none focus:outline-none"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{
@@ -41,3 +41,14 @@ export default function MyButton({title, number, subtitle}) {
     </div>
   );
 }
+
+const Buttons = () => (
+  <div className="grid grid-cols-2 gap-6 mt-20">
+    <MyButton title="мы" number="1" subtitle="на рынке" />
+    <MyButton title="гарантируем" number="50%" subtitle="безопасность" />
+    <MyButton title="путешествие" number="597" subtitle="дней" />
+    <MyButton title="календарик" number="2001 г." subtitle="в подарок" />
+  </div>
+);
+
+export default Buttons
