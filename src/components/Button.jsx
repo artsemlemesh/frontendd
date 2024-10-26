@@ -30,9 +30,14 @@ function MyButton({ title, number, subtitle, gradientStyle }) {
           ...gradientStyle,
         }}
       >
-        <p className="text-lg z-10">{title}</p>
-        <p className="text-5xl font-bold z-10">{number}</p>
-        <p className="text-lg z-10">{subtitle}</p>
+        <p className="text-lg font-light z-10">{title}</p>
+        <p className="text-5xl font-bold z-10">
+          {number}
+          {title === 'календарик за' && (
+            <span className="text-sm font-normal align-super">г.</span>
+          )}
+        </p>
+        <p className="text-lg font-light z-10">{subtitle}</p>
 
         <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"></div>
       </Button>
@@ -62,10 +67,22 @@ const Buttons = () => {
   }, []);
 
   const gradientStyles = [
-    { background: 'linear-gradient(to top left, rgba(128,128,128,0.3), rgba(128,128,128,0.1) 30%, transparent 80%)' }, 
-    { background: 'linear-gradient(to top right, rgba(128,128,128,0.3), rgba(128,128,128,0.1) 30%, transparent 80%)' }, 
-    { background: 'linear-gradient(to bottom left, rgba(128,128,128,0.3), rgba(128,128,128,0.1) 30%, transparent 80%)' },
-    { background: 'linear-gradient(to bottom right, rgba(128,128,128,0.3), rgba(128,128,128,0.1) 30%, transparent 80%)' },
+    {
+      background:
+        'linear-gradient(to top left, rgba(128,128,128,0.3), rgba(128,128,128,0.1) 30%, transparent 80%)',
+    },
+    {
+      background:
+        'linear-gradient(to top right, rgba(128,128,128,0.3), rgba(128,128,128,0.1) 30%, transparent 80%)',
+    },
+    {
+      background:
+        'linear-gradient(to bottom left, rgba(128,128,128,0.3), rgba(128,128,128,0.1) 30%, transparent 80%)',
+    },
+    {
+      background:
+        'linear-gradient(to bottom right, rgba(128,128,128,0.3), rgba(128,128,128,0.1) 30%, transparent 80%)',
+    },
   ];
 
   return (
@@ -76,7 +93,7 @@ const Buttons = () => {
           title={button.title}
           number={button.number}
           subtitle={button.subtitle}
-          gradientStyle={gradientStyles[index % gradientStyles.length]} 
+          gradientStyle={gradientStyles[index % gradientStyles.length]}
         />
       ))}
     </div>

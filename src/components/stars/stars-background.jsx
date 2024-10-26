@@ -1,6 +1,6 @@
-"use client";;
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import { cn } from "../../utils/utils";
+'use client';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { cn } from '../../utils/utils';
 
 export const StarsBackground = ({
   starDensity = 0.00015,
@@ -11,39 +11,41 @@ export const StarsBackground = ({
   className,
 }) => {
   const [stars, setStars] = useState([]);
-  const canvasRef =
-    useRef(null);
+  const canvasRef = useRef(null);
 
-  const generateStars = useCallback((width, height) => {
-    const area = width * height;
-    const numStars = Math.floor(area * starDensity);
-    return Array.from({ length: numStars }, () => {
-      const shouldTwinkle =
-        allStarsTwinkle || Math.random() < twinkleProbability;
-      return {
-        x: Math.random() * width,
-        y: Math.random() * height,
-        radius: Math.random() * 0.05 + 0.5,
-        opacity: Math.random() * 0.5 + 0.5,
-        twinkleSpeed: shouldTwinkle
-          ? minTwinkleSpeed +
-            Math.random() * (maxTwinkleSpeed - minTwinkleSpeed)
-          : null,
-      };
-    });
-  }, [
-    starDensity,
-    allStarsTwinkle,
-    twinkleProbability,
-    minTwinkleSpeed,
-    maxTwinkleSpeed,
-  ]);
+  const generateStars = useCallback(
+    (width, height) => {
+      const area = width * height;
+      const numStars = Math.floor(area * starDensity);
+      return Array.from({ length: numStars }, () => {
+        const shouldTwinkle =
+          allStarsTwinkle || Math.random() < twinkleProbability;
+        return {
+          x: Math.random() * width,
+          y: Math.random() * height,
+          radius: Math.random() * 0.05 + 0.5,
+          opacity: Math.random() * 0.5 + 0.5,
+          twinkleSpeed: shouldTwinkle
+            ? minTwinkleSpeed +
+              Math.random() * (maxTwinkleSpeed - minTwinkleSpeed)
+            : null,
+        };
+      });
+    },
+    [
+      starDensity,
+      allStarsTwinkle,
+      twinkleProbability,
+      minTwinkleSpeed,
+      maxTwinkleSpeed,
+    ]
+  );
 
   useEffect(() => {
     const updateStars = () => {
       if (canvasRef.current) {
         const canvas = canvasRef.current;
-        const ctx = canvas.getContext("2d");
+        const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
         const { width, height } = canvas.getBoundingClientRect();
@@ -78,7 +80,7 @@ export const StarsBackground = ({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     let animationFrameId;
@@ -109,8 +111,9 @@ export const StarsBackground = ({
   }, [stars]);
 
   return (
-    (<canvas
+    <canvas
       ref={canvasRef}
-      className={cn("h-full w-full absolute inset-0", className)} />)
+      className={cn('h-full w-full absolute inset-0', className)}
+    />
   );
 };
