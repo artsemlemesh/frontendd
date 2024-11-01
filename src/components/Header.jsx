@@ -6,7 +6,7 @@ function Header() {
   useEffect(() => {
     const fetchNavItems = async () => {
       try {
-        const response = await fetch('https://backendd1-d15f5fb1c279.herokuapp.com/api/menu-items/');
+        const response = await fetch('http://127.0.0.1:8000/api/menu-items/');
         const data = await response.json();
         setNavItems(data);
         console.log('Nav Items:', data);
