@@ -51,7 +51,7 @@ const Buttons = () => {
   useEffect(() => {
     const fetchButtons = async () => {
       try {
-        const response = await fetch('http://backendd1-d15f5fb1c279.herokuapp.com/api/buttons/');
+        const response = await fetch('https://backendd1-d15f5fb1c279.herokuapp.com/api/buttons/');
         const data = await response.json();
         if (Array.isArray(data)) {
           setButtons(data);
