@@ -4,9 +4,9 @@ function Line() {
 
 
   return (
-    <div className="flex justify-center mt-4 2lg:mt-0 2lg:-translate-x-64 2lg:translate-y-28">
+    <div className="flex justify-center mt-4 2lg:mt-0 2lg:-translate-x-64 2lg:translate-y-28 ">
       <DesignerButton label="Начать путешествие" />
-      <div className="">
+      <div className=" ">
         <svg
           className="hidden 2lg:block absolute z-30"
           width="1100"
@@ -34,9 +34,9 @@ function Line() {
             </linearGradient>
           </defs>
           <path
-            d="M 300 70 
+            d="M 400 70 
                          L 150 70 
-                         C -180 -40, -550 5, -70 30"
+                         C -180 -40, -900 5, -70 30"
             stroke="url(#lineGradient)"
             strokeWidth="2"
             fill="none"
