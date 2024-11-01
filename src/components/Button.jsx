@@ -34,7 +34,7 @@ function MyButton({ title, number, subtitle, gradientStyle }) {
         <p className="text-5xl font-bold z-10">
           {number}
           {title === 'календарик за' && (
-            <span className="text-sm font-normal align-super">г.</span>
+            <span className="text-sm font-normal">г.</span>
           )}
         </p>
         <p className="text-lg font-light z-10">{subtitle}</p>
@@ -51,7 +51,7 @@ const Buttons = () => {
   useEffect(() => {
     const fetchButtons = async () => {
       try {
-        const response = await fetch('https://backendd1-d15f5fb1c279.herokuapp.com/api/buttons/');
+        const response = await fetch('http://127.0.0.1:8000/api/buttons/');
         const data = await response.json();
         if (Array.isArray(data)) {
           setButtons(data);

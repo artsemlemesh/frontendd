@@ -22,7 +22,7 @@ function App() {
               position: 'absolute',
               top: '33%',
               left: '53%',
-              transform: 'translate(-54%, -44%)',
+              transform: 'translate(-54%, -65%)',
             }}
           ></div>
         </div>
