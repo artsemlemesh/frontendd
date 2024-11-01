@@ -26,35 +26,32 @@ function Header() {
           <img
             src="/spacex-logo.png"
             alt="SpaceX"
-            className="h-12 mb-4 lg:mb-0"
+            className="h-12 mb-5 ml-5 mt-5"
           />
+          {/* Top horizontal border */}
+          <span className="absolute top-[-6px] left-0 right-0 border-t border-gray-600 z-10"></span>
+          {/* Bottom horizontal border */}
+          <span className="absolute bottom-[-13px] left-0 right-0 border-t border-gray-600 z-10"></span>
+          {/* Left vertical border */}
+          <span className="absolute top-0 bottom-0 left-[-6px] border-l border-gray-600 z-10"></span>
+          {/* Right vertical border */}
+          <span className="absolute top-0 bottom-0 right-[-6px] border-l border-gray-600 z-10"></span>
+
           {/* White corners */}
-          <span
-            className="absolute top-[-6px] right-[-6px] h-0.5  bg-white z-10"
-            style={{ width: '10px' }}
-          ></span>
-          <span className="absolute top-[-6px] right-[-6px] w-0.5 h-1/4 bg-white z-10"></span>
+          <span className="absolute top-[-6px] left-[-6px] w-[10px] h-0.5 bg-white z-10"></span>
+          <span className="absolute top-[-6px] left-[-6px] w-0.5 h-[10px] bg-white z-10"></span>
 
-          <span
-            className="absolute top-[-6px] left-[-6px] h-0.5  bg-white z-10"
-            style={{ width: '10px' }}
-          ></span>
-          <span className="absolute top-[-6px] left-[-6px] w-0.5 h-1/4 bg-white z-10"></span>
+          <span className="absolute top-[-6px] right-[-6px] w-[10px] h-0.5 bg-white z-10"></span>
+          <span className="absolute top-[-6px] right-[-6px] w-0.5 h-[10px] bg-white z-10"></span>
 
-          <span
-            className="absolute bottom-[-6px] left-[-6px] h-0.5  bg-white z-10"
-            style={{ width: '10px' }}
-          ></span>
-          <span className="absolute bottom-[-6px] left-[-6px] w-0.5 h-1/4 bg-white z-10"></span>
+          <span className="absolute bottom-[-12px] left-[-6px] w-[10px] h-0.5 bg-white z-10"></span>
+          <span className="absolute bottom-[-10px] left-[-6px] w-0.5 h-[10px] bg-white z-10"></span>
 
-          <span
-            className="absolute bottom-[-6px] right-[-6px] h-0.5  bg-white z-10"
-            style={{ width: '10px' }}
-          ></span>
-          <span className="absolute bottom-[-6px] right-[-6px] w-0.5 h-1/4 bg-white z-10"></span>
+          <span className="absolute bottom-[-12px] right-[-6px] w-[10px] h-0.5 bg-white z-10"></span>
+          <span className="absolute bottom-[-10px] right-[-6px] w-0.5 h-[10px] bg-white z-10"></span>
         </div>
         {/* Navigation links */}
-        <nav className="hidden lg:flex lg:flex-row text-gray-300 space-x-6">
+        <nav className="hidden lg:flex lg:flex-row text-gray-300 space-x-3">
           {navItems.map((item) => (
             <a
               key={item}
@@ -68,7 +65,7 @@ function Header() {
         </nav>
 
         {/* Mobile navigation links */}
-        <nav className="lg:hidden grid grid-cols-2 gap-y-4 text-gray-300">
+        <nav className="lg:hidden grid grid-cols-2 gap-y-4 text-gray-300 mt-4">
           {navItems.map((item) => (
             <a
               key={item}
@@ -82,7 +79,7 @@ function Header() {
         </nav>
       </div>
 
-      <div className="border-b border-gray-600 mt-4"></div>
+      <div className="border-b border-gray-600 mt-3"></div>
     </header>
   );
 }

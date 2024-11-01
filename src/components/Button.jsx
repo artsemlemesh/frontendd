@@ -26,8 +26,8 @@ function MyButton({ title, number, subtitle, gradientStyle }) {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{
-           minWidth: '160px', 
-           minHeight: '160px',
+          //  minWidth: '160px', 
+          //  minHeight: '160px',
           transform: `perspective(800px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
           ...gradientStyle,
         }}
