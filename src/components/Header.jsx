@@ -6,7 +6,7 @@ function Header() {
   useEffect(() => {
     const fetchNavItems = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/menu-items/');
+        const response = await fetch('http://backendd1-d15f5fb1c279.herokuapp.com/api/menu-items/');
         const data = await response.json();
         setNavItems(data);
         console.log('Nav Items:', data);
@@ -28,13 +28,9 @@ function Header() {
             alt="SpaceX"
             className="h-12 mb-5 ml-5 mt-5"
           />
-          {/* Top horizontal border */}
           <span className="absolute top-[-6px] left-0 right-0 border-t border-gray-600 z-10"></span>
-          {/* Bottom horizontal border */}
           <span className="absolute bottom-[-13px] left-0 right-0 border-t border-gray-600 z-10"></span>
-          {/* Left vertical border */}
           <span className="absolute top-0 bottom-0 left-[-6px] border-l border-gray-600 z-10"></span>
-          {/* Right vertical border */}
           <span className="absolute top-0 bottom-0 right-[-6px] border-l border-gray-600 z-10"></span>
 
           {/* White corners */}

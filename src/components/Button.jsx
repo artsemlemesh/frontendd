@@ -26,8 +26,6 @@ function MyButton({ title, number, subtitle, gradientStyle }) {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{
-          //  minWidth: '160px', 
-          //  minHeight: '160px',
           transform: `perspective(800px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
           ...gradientStyle,
         }}
@@ -53,7 +51,7 @@ const Buttons = () => {
   useEffect(() => {
     const fetchButtons = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/buttons/');
+        const response = await fetch('http://backendd1-d15f5fb1c279.herokuapp.com/api/buttons/');
         const data = await response.json();
         if (Array.isArray(data)) {
           setButtons(data);
