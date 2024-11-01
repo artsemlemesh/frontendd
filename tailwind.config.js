@@ -6,7 +6,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        'md-lg': { min: '1200px', max: '1700px' },
+        // 'md-lg': { min: '1200px', max: '1700px' },
+        '2lg': '1300px', 
       },
       animation: {
         fadeIn: 'fadeIn 2s ease-in-out',
