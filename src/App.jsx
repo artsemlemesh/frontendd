@@ -4,6 +4,7 @@ import { StarsBackground } from './components/stars/stars-background';
 import Buttons from './components/Button';
 import Header from './components/Header';
 import Line from './components/Line';
+import RocketLine from './components/RocketLine';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
                 className="h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80 lg:h-96 lg:w-96 object-cover z-20 mb-4 2lg:mb-0 2lg:h-[500px] 2lg:w-[500px] 2lg:absolute 2lg:top-40 2lg:left-96 2lg:-translate-x-1/2 2lg:-translate-y-1/2 
                            scale-125 md:scale-100 lg:scale-90 2lg:scale-75"
               />
+              <RocketLine />
 
               <div className="2lg:relative z-10 left-[-4rem] top-1/4 2lg:left-auto 2lg:top-0 2lg:-translate-x-1/2 2lg:-translate-y-1/4">
                 <h1 className="animate-fadeIn relative bg-gradient-to-r from-white to-orange-500 bg-clip-text text-transparent flex flex-col items-center 2lg:items-start">
@@ -48,7 +50,7 @@ function App() {
                 </h1>
               </div>
 
-              <Line className="" />
+              <Line />
             </div>
 
             <div className="flex justify-center 2lg:ml-10 2lg:justify-end mt-4 2lg:mt-14">
